@@ -3,10 +3,9 @@
     <div class="nav-container">
     <a href="/" class="nav-logo" title="Back to Homepage">Денис Гиревой</a>
     <div class="nav-links">
-    <a href="/about" class="link">Обо мнe</a> 
-    <a href="/blog" class="link">Блoг</a>
-    <a href="/projects" class="link">Пopтфолио</a>
-    <a href="/contact" class="link">Kонтакты</a>
+        {#each nav as link}
+        <a href={link.href} class="link">{link.title}</a>
+        {/each}
     </div>
     </div>
 </nav>
@@ -15,6 +14,31 @@
     <!-- Pages will be injected below -->
     <slot></slot>
     </div>
+
+    <script>
+    const nav = [
+        {
+            title: 'Обо мне',
+            href: '/about'
+        },
+        {
+            title: 'Блог',
+            href: '/blog'
+        },
+        {
+            title: 'Портфолио',
+            href: '/project'
+        },
+        {
+            title: 'Контакты',
+            href: '/contact'
+        },
+        {
+            title: 'temp',
+            href: '/temp'
+        },
+    ]
+    </script>
 
 <style>
     .container {
